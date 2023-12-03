@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentDate) {
             const customMessage =congratulationsMessageInput.value
             
-            alert(customMessage," enregistrer le message le",currentDate);
             // Enregistrement du message personnalisé pour la date spécifiée
             customMessages[currentDate] = customMessage;
             messageSavedDates.push(currentDate);
@@ -118,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     
                 zone_entrer.style.display = "none";
                 
-                alert('La journée du ' + date + ' a été complétée avec succès. Le patient a effectué les activités suivantes: ' + getActivitiesForDayAsString(date) + '. Le patient a laissé la note suivante: ' + customMessages[date]);
+                console.log('La journée du ' + date + ' a été complétée avec succès. Le patient a effectué les activités suivantes: ' + getActivitiesForDayAsString(date) + '. Le patient a laissé la note suivante: ' + customMessages[date]);
                 activitiesForDay.forEach(activity => {
                     const activityItem = document.createElement("li");
                     activityItem.classList.add("activityItem");
@@ -154,7 +153,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     checkbox.classList.add("activityCheckbox");
                     checkbox.addEventListener("change", function () {
                         activity.done = checkbox.checked;
-                        renderCalendar(); // Re-render the calendar when a checkbox changes
+                        renderCalendar(); 
+                        renderActivityList(date)// Re-render the calendar when a checkbox changes
                     });
     
                     const activityLabel = document.createElement("label");
