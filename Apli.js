@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function renderActivityList(date) {
         activityList.innerHTML = "";
+        
         activityList.appendChild(zone_entrer)
         const activitiesForDay = activities[date] || [];
         const anyActivityCompleted = activitiesForDay.some(activity => activity.done);
@@ -118,9 +119,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 zone_entrer.style.display = "none";
                 
                 alert('La journée du ' + date + ' a été complétée avec succès. Le patient a effectué les activités suivantes: ' + getActivitiesForDayAsString(date) + '. Le patient a laissé la note suivante: ' + customMessages[date]);
-
+                activitiesForDay.forEach(activity => {
+                    const activityItem = document.createElement("li");
+                    activityItem.classList.add("activityItem");
+                    
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.checked = activity.done;
+                    checkbox.classList.add("activityCheckbox");
+                    checkbox.addEventListener("change", function () {
+                        activity.done = checkbox.checked;
+                        renderCalendar(); // Re-render the calendar when a checkbox changes
+                    });
+    
+                    const activityLabel = document.createElement("label");
+                    activityLabel.textContent = activity.name;
+    
+                    activityItem.appendChild(checkbox);
+                    activityItem.appendChild(activityLabel);
+    
+                    activityList.appendChild(activityItem);
+                });  
                 }
             }else {
+                
+                zone_entrer.style.display = "block";
                 activitiesForDay.forEach(activity => {
                     const activityItem = document.createElement("li");
                     activityItem.classList.add("activityItem");
