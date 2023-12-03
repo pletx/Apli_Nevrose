@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const currentMonth = now.getMonth();
         const lastDay = new Date(now.getFullYear(), currentMonth + 1, 0).getDate();
 
-        monthYearIndicator.textContent = `${now.toLocaleString('default', { month: 'long' })} ${now.getFullYear()}`;
+        monthYearIndicator.textContent = `ÉLOGNE`;
 
         calendar.innerHTML = "";
 
