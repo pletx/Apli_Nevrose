@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function renderActivityList(date) {
         activityList.innerHTML = "";
         
+        zone_entrer.style.display = "block";
         activityList.appendChild(zone_entrer)
         const activitiesForDay = activities[date] || [];
         const anyActivityCompleted = activitiesForDay.some(activity => activity.done);
@@ -110,7 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (anyActivityCompleted) {
             const allActivitiesCompleted = activitiesForDay.every(activity => activity.done);
             if (allActivitiesCompleted) {
-                zone_entrer.style.display = "block";
                 congratulationsMessage.textContent =customMessages[date];
                 activityList.appendChild(congratulationsMessage);
                 
