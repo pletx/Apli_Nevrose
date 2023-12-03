@@ -29,6 +29,30 @@ body {
     text-decoration: underline;
     cursor: pointer;
 }
+/* Ajout de la transition de couleur au survol */
+.activityLabel,
+#newActivitybutton,
+#saveCongratulationsMessageButton,
+.day {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.activityLabel:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #af4c98; /* Changement de couleur au survol */
+}
+
+#newActivitybutton:hover,
+#saveCongratulationsMessageButton:hover {
+    background-color: #4c63af;
+    color: #fff; /* Changement de couleur au survol */
+}
+
+.day:hover {
+    background-color: #e0e0e0;
+    color: #4caf50; /* Changement de couleur au survol */
+}
 
 .app-container {
     background-color: #fff;

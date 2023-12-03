@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const currentMonth = now.getMonth();
         const lastDay = new Date(now.getFullYear(), currentMonth + 1, 0).getDate();
 
-        monthYearIndicator.textContent = `Selfplann`;
+        monthYearIndicator.textContent = `SelfPlann`;
 
         calendar.innerHTML = "";
 
