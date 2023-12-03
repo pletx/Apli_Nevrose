@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Apli.css">
+    <title>Planificateur d'activités</title>
+</head>
+<body>
+
+<div class="app-container">
+    <div class="header">
+        <p id="monthYearIndicator"></p>
+        <input type="text" id="newActivityInput" placeholder="Nouvelle activité">
+        <input type="date" id="newActivityDate">
+        <button id="newActivitybutton">Ajouter</button>
+    </div>
+    
+    <div id="calendar"></div>
+    
+    <p id="congratulationsMessage"></p>
+    <ul id="activityList">
+        
+        <div id="zone_entrer">
+            <label for="congratulationsMessageInput">Message de félicitations personnalisé:</label>
+            <textarea id="congratulationsMessageInput" placeholder="Félicitations! Toutes les activités sont complétées pour cette journée."></textarea>
+            <button id="saveCongratulationsMessageButton">Enregistrer</button>
+        </div>
+    </ul>
+</div>
+
+<script src="Apli.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</body>
+</html>
