@@ -91,8 +91,8 @@ body {
 }
 
 .day {
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,10 +148,6 @@ body {
 
     #newActivitybutton, #saveCongratulationsMessageButton {
         width: 100%;
-    }
-
-    #calendar {
-        flex-direction: column;
     }
 
     .day {
